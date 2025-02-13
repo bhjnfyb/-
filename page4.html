@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Финальный сюрприз 💖</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            background: black;
+            color: white;
+            font-family: 'Pacifico', cursive;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.5em;
+            opacity: 0.7;
+        }
+        #fireworks {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        .firework {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: red;
+            border-radius: 50%;
+            animation: explode 1s ease-out;
+        }
+        @keyframes explode {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(10); opacity: 0; }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div>
+        <h1>💖 Нажми и держи 💖</h1>
+        <p>(Подсказка: нажми и держи на экране)</p>
+    </div>
+    <div id="fireworks"></div>
+
+    <script>
+        const fireworks = document.getElementById('fireworks');
+
+        document.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            createFireworks(e.touches[0].clientX, e.touches[0].clientY);
+        });
+
+        document.addEventListener('touchend', (e) => {
+            e.preventDefault();
+            setTimeout(() => {
+                fireworks.innerHTML = '';
+            }, 1000);
+        });
+
+        function createFireworks(x, y) {
+            const heart = document.createElement('div');
+            heart.style.left = `${x}px`;
+            heart.style.top = `${y}px`;
+            heart.style.position = 'absolute';
+            heart.style.fontSize = '50px';
+            heart.style.color = 'red';
+            heart.textContent = '💖';
+            fireworks.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 1000);
+        }
+    </script>
+</body>
+</html>

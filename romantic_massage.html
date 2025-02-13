@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Наша история 💖</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            font-family: 'Pacifico', cursive;
+            color: white;
+            text-align: center;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        h1 {
+            font-size: 3.5em;
+            margin-top: 20%;
+            animation: fadeIn 3s ease-in-out;
+        }
+        p {
+            font-size: 1.8em;
+            animation: fadeIn 5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        button {
+            margin-top: 20px;
+            padding: 15px 30px;
+            font-size: 1.5em;
+            background: #ff6f61;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            animation: fadeIn 7s ease-in-out;
+            font-family: 'Pacifico', cursive;
+        }
+        button:hover {
+            background: #ff3b2f;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div>
+        <h1>💖 Наша история 💖</h1>
+        <p>Давай вспомним, как всё начиналось...</p>
+        <button onclick="window.location.href='page2.html'">Начать</button>
+    </div>
+</body>
+</html>
